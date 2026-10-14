@@ -1,0 +1,6 @@
+export {Entrada} from './Entrada'
+export {Cadastro} from './Cadastro'
+export {Login} from './Login'
+export {EsqueciSenha} from './EsqueciSenha'
+export {Perfil} from './Perfil'
+export {AlterarSenha} from './AlterarSenha'
