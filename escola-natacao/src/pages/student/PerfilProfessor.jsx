@@ -59,7 +59,7 @@ export function PerfilProfessor() {
                 </div>
               ))
             ) : (
-              <Empty>Ainda sem avaliações</Empty>
+              <Empty>Este docente ainda não recebeu avaliações.</Empty>
             )}
           </>
         )}

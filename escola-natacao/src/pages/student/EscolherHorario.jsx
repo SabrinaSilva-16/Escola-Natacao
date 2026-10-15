@@ -53,9 +53,9 @@ export function EscolherHorario() {
             ))
           ) : (
             <Empty>
-              Sem horários livres neste dia
+              Sem horários livres neste dia.
               <br />
-              Tente outro dia com as setas acima.
+              Escolha outro dia utilizando as setas acima.
             </Empty>
           )
         }

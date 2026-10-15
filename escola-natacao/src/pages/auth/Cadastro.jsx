@@ -22,7 +22,7 @@ export function Cadastro() {
         <Field n="senha" label="Senha" type="password" required />
       </Form>
       <p className="mut">
-        Já tem conta? <Link to="/login">Entrar</Link>
+        Já tem uma conta? <Link to="/login">Entrar</Link>
       </p>
     </Page>
   )

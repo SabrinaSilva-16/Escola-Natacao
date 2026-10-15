@@ -25,7 +25,7 @@ export function Professores() {
               </Link>
             ))
           ) : (
-            <Empty>Nenhum professor cadastrado</Empty>
+            <Empty>Nenhum professor cadastrado.</Empty>
           )
         }
       </Load>

@@ -1,4 +1,4 @@
-// E1 · Entrada: primeira tela, com a marca do negócio
+// E1 · Entrada: primeira tela
 import {Link, Navigate} from 'react-router-dom'
 import {S} from '../../api/session'
 import {Logo} from '../../components/Logo'
@@ -15,7 +15,7 @@ export function Entrada() {
           <Logo />
         </div>
         <h1>{S.org.nome}</h1>
-        <p>Aulas de natação para todas as idades. Agende, acompanhe e avalie.</p>
+        <p>Aulas de natação para adultos e crianças. Agende, acompanhe e avalie.</p>
         <Link className="btn" to="/login">
           Entrar
         </Link>

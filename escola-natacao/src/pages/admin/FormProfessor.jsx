@@ -1,4 +1,4 @@
-// A6 · Novo / editar professor
+// A6 · Novo/editar professor
 import {Link, useNavigate, useParams} from 'react-router-dom'
 import {api} from '../../api/client'
 import {Form, Field} from '../../components/Form'

@@ -3,8 +3,10 @@ import {useNavigate} from 'react-router-dom'
 import {S, save} from '../api/session'
 import {api} from '../api/client'
 import {ORG} from '../api/config'
+
 const Auth = createContext(null)
 export const useAuth = () => useContext(Auth)
+
 const ADMIN = 'api.change_organizacao'
 export function AuthProvider({children}) {
   const [u, setU] = useState(null),
@@ -17,8 +19,10 @@ export function AuthProvider({children}) {
         .catch(() => {})
         .finally(() => setReady(true))
   }, [])
+
   const isAdm = !!u?.permissoes.includes(ADMIN),
     can = x => !!u?.permissoes.includes('api.' + x)
+
   const login = async (email, senha) => {
     S.tk = await api('POST', '/auth/login/', {organizacao: ORG, email, senha})
     save()
@@ -26,12 +30,14 @@ export function AuthProvider({children}) {
     setU(me)
     nav(me.permissoes.includes(ADMIN) ? '/ag' : '/ini')
   }
+
   const logout = () => {
     S.tk = null
     save()
     setU(null)
     nav('/ent')
   }
+
   if (!ready)
     return (
       <main>

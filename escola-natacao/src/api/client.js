@@ -2,6 +2,10 @@ import {MOCK, BASE} from './config'
 import {mock} from './mock'
 import {S, save} from './session'
 import {list} from '../utils/pagination'
+
+const API = import.meta.env.VITE_API_URL
+export const ORGANIZACAO = import.meta.env.VITE_ORGANIZACAO
+
 const go = p => {
   location.hash = '#/' + p
 }

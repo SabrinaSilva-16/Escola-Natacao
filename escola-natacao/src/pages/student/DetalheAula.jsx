@@ -15,7 +15,7 @@ export function DetalheAula() {
     {isAdm, can} = useAuth(),
     s = useLoad(() => api('GET', '/agendamentos/' + id + '/'), [id])
   const act = async k => {
-    if (k == 'cancelar' && !confirm('Cancelar esta aula?')) return
+    if (k == 'cancelar' && !confirm('Deseja cancelar esta aula?')) return
     try {
       await api('POST', `/agendamentos/${id}/${k}/`)
       toast('Aula atualizada')
@@ -24,11 +24,13 @@ export function DetalheAula() {
       fail(e)
     }
   }
+
   const Ab = ({k, l, c = ''}) => (
     <button className={'btn ' + c} style={{marginTop: 10}} onClick={() => act(k)}>
       {l}
     </button>
   )
+
   return (
     <Page title="Detalhe da aula" back={isAdm ? 'ag' : 'aulas'}>
       <Load s={s}>

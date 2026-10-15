@@ -21,7 +21,7 @@ export function AgendamentoEnviado() {
         <div className="mut">{a.recurso.nome}</div>
       </div>
       <p className="mut">
-        O administrador vai confirmar sua aula. Você acompanha o status em Aulas.
+        O administrador vai confirmar sua aula. Você pode acompanhar o status na aba Aulas.
       </p>
       <Link className="btn" to={'/aula/' + a.id}>
         Ver aula

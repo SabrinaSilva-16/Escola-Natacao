@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import {fail} from '../utils/feedback'
+
 export function useLoad(fn, deps = []) {
   const [s, set] = useState({}),
     [n, setN] = useState(0)

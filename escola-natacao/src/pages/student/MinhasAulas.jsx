@@ -1,4 +1,4 @@
-// C7 · Minhas aulas: próximos e histórico
+// C7 · Minhas aulas: próximas aulas + histórico
 import {useState, useEffect} from 'react'
 import {api} from '../../api/client'
 import {AulaItem} from '../../components/AulaItem'
@@ -13,10 +13,12 @@ export function MinhasAulas() {
     [it, setIt] = useState(null),
     [pg, setPg] = useState(1),
     [nx, setNx] = useState(false)
+
   const q = p =>
     (tab
       ? `/agendamentos/?data_fim=${ld(add(new Date(), -1))}&ordering=-inicio&page=`
       : `/agendamentos/?data_inicio=${today()}&page=`) + p
+
   useEffect(() => {
     setIt(null)
     setPg(1)
@@ -25,17 +27,19 @@ export function MinhasAulas() {
       setNx(d.next)
     }, fail)
   }, [tab])
+
   const more = async () => {
     const d = await api('GET', q(pg + 1))
     setIt(x => x.concat(list(d)))
     setPg(pg + 1)
     setNx(d.next)
   }
+
   return (
     <Page title="Minhas aulas">
       <div className="tabs">
         <button className={tab ? '' : 'on'} onClick={() => setTab(0)}>
-          Próximos
+          Próximas
         </button>
         <button className={tab ? 'on' : ''} onClick={() => setTab(1)}>
           Histórico
@@ -46,7 +50,7 @@ export function MinhasAulas() {
       ) : it.length ? (
         it.map(a => <AulaItem key={a.id} a={a} />)
       ) : (
-        <Empty>Nenhuma aula aqui</Empty>
+        <Empty>Nenhuma aula cadastrada.</Empty>
       )}
       {nx && (
         <button className="btn ghost" style={{color: 'var(--pool)'}} onClick={more}>

@@ -1,4 +1,4 @@
-// C3 · Escolher professor (2º passo)
+// C3 · Escolher professor (2º passo do agendamento)
 import {Link, Navigate, useParams} from 'react-router-dom'
 import {api} from '../../api/client'
 import {Avatar} from '../../components/Avatar'
@@ -30,7 +30,7 @@ export function EscolherProfessor() {
             <>
               <Link className="item" to="/data" onClick={() => (B.rid = null)}>
                 <b>Qualquer um</b>
-                <div className="mut">Mostra os horários de todos os professores</div>
+                <div className="mut">Mostra os horários de todos os professores.</div>
               </Link>
               {l.map(r => (
                 <div key={r.id} className="item" style={{margin: '0 0 10px'}}>
@@ -53,7 +53,7 @@ export function EscolherProfessor() {
               ))}
             </>
           ) : (
-            <Empty>Nenhum professor realiza este serviço</Empty>
+            <Empty>Nenhum professor realiza este serviço.</Empty>
           )
         }
       </Load>
